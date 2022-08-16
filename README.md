@@ -19,15 +19,18 @@ include bottle_session
 session = bottle_session.Session('your-secret')
 ```
     
-in each view function, include the code or put it in `@app.before_request()`
+in each view function, include similar code that connects, 
     
 ```
+@app.route('/somefunc')
 def some_func():
-    session.connect()
+    session.connect() # connect the session
+    # manipulate the session data (data is the magic part of the session)
     session.data['user'] = 'joe'
     session.data['age'] = '30'
     # note that when 'file' mode is used
     # it is not saved until session.save() is called
     # and is optional (inert) if you are using 'memory' mode
     session.save()
+    ...
 ```
