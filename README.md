@@ -1,7 +1,7 @@
 # bottle_session
 `bottle_session` is a simple session module for the Bottle framework.  Some other projects have session managers for Bottle, but I felt a very simple session was in the spirit of the Bottle framework.
 
-The session is referenced with a simple cookie that can be stored in memory only or a pickled server-side cache.
+The session is referenced with a simple cookie that can be stored in two selectable modes: 'memory' only or a pickled server-side cache 'file'.
 
 
 ### Caveat
