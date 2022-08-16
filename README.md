@@ -25,7 +25,7 @@ include bottle_session
 session = bottle_session.Session('your-secret')
 ```
     
-in each view function, include similar code that connects, 
+in each view function, include similar code that connects, and keeps the session data organize with the dictionary `session.data`.
     
 ```
 @app.route('/somefunc')
