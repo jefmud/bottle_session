@@ -36,3 +36,15 @@ def some_func():
     session.save()
     ...
 ```
+
+Alternately you could put a session connect in the `before_request` and save the session in the `after_request`
+
+```
+@app.before_request
+def before_request():
+    session.connect()
+    
+@app.after_request
+def after_request():
+    session.save()
+```
