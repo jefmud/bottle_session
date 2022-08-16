@@ -1,5 +1,5 @@
 # bottle_session
-A simple session module for the Bottle framework
+A simple session module for the Bottle framework.  Although a somewhat rare occurence, the session is **not thread safe** if two different processes are associating themselves with the same session.
 
 Session object class
     __init__(params) - creates a session object
@@ -48,3 +48,14 @@ def before_request():
 def after_request():
     session.save()
 ```
+
+Then when the user's session is done, you can purge or clear the session with `session.purge()` or `session.clear()` both are equivalent.
+
+```
+@app.route('/logout')
+def logout():
+    session.purge()
+```
+
+# Acknowlegements
+Thanks to Marcel Helkamp and the Bottle community for developing the Bottle Framework.
