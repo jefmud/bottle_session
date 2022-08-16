@@ -37,7 +37,7 @@ def some_func():
     ...
 ```
 
-Alternately you could put a session connect in the `before_request` and save the session in the `after_request`
+Alternately you could put a session connect in the `before_request` and save the session in the `after_request`.  Though it is somewhat inefficient to do this.
 
 ```
 @app.before_request
