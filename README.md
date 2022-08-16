@@ -31,7 +31,7 @@ in each view function, include similar code that connects, and keeps the session
 @app.route('/somefunc')
 def some_func():
     session.connect() # connect the session
-    # manipulate the session data (data is the magic part of the session)
+    # manipulate the session data (session.data is where the data is stored)
     session.data['user'] = 'joe'
     session.data['age'] = '30'
     # note that when 'file' mode is used
