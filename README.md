@@ -5,10 +5,12 @@ Session object class
     __init__(params) - creates a session object
 
 params:
+```
  secret - required secret for encrypting data
  sessions_dir - the directory to store the sessions in (defaults to './sessions')
  mode - the mode of the session storage, 'memory' or 'file' (defaults to 'memory')
  days - the number of days to keep the session in memory (defaults to 30)
+```
 
 ## Example usage -- using session
 
