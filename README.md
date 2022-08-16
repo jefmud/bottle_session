@@ -15,7 +15,8 @@ params:
 at the top of your app.py file include the line
     
  ```
-session = Session('your-secret')
+include bottle_session
+session = bottle_session.Session('your-secret')
 ```
     
 in each view function, include the code or put it in `@app.before_request()`
