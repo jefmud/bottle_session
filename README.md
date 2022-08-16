@@ -1,5 +1,9 @@
 # bottle_session
-A simple session module for the Bottle framework.  Although a somewhat rare occurence, the session is **not thread safe** if two different processes are associating themselves with the same session.
+`bottle_session` is a simple session module for the Bottle framework.  Some other projects have session managers for Bottle, but I felt a very simple session was in the spirit of the Bottle framework.
+
+
+### Caveat
+Although a somewhat rare occurence, the session is **not thread safe** if two different processes are associating themselves with the same session.
 
 Session object class
     __init__(params) - creates a session object
