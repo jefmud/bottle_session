@@ -1,6 +1,8 @@
 # bottle_session
 `bottle_session` is a simple session module for the Bottle framework.  Some other projects have session managers for Bottle, but I felt a very simple session was in the spirit of the Bottle framework.
 
+The session is referenced with a simple cookie that can be stored in memory only or a pickled server-side cache.
+
 
 ### Caveat
 Although a somewhat rare occurence, the session is **not thread safe** if two different processes are associating themselves with the same session.
@@ -12,7 +14,8 @@ params:
 ```
  secret - required secret for encrypting data
  sessions_dir - the directory to store the sessions in (defaults to './sessions')
- mode - the mode of the session storage, 'memory' or 'file' (defaults to 'memory')
+ cookie_name - the name of the cookie to reference the session (defaults to 'bsession')
+ mode - 'memory', 'file' (defaults to 'memory')
  days - the number of days to keep the session in memory (defaults to 30)
 ```
 
@@ -31,7 +34,7 @@ in each view function, include similar code that connects, and keeps the session
 @app.route('/somefunc')
 def some_func():
     session.connect() # connect the session
-    # manipulate the session data (session.data is where the data is stored)
+    # manipulate the session.data dictionary
     session.data['user'] = 'joe'
     session.data['age'] = '30'
     # note that when 'file' mode is used
