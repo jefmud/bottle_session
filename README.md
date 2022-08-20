@@ -61,6 +61,7 @@ Then when the user's session is done, you can purge or clear the session with `s
 ```
 @app.route('/logout')
 def logout():
+    session.connect()
     session.purge()
 ```
 
