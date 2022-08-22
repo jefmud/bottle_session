@@ -13,7 +13,7 @@ import string
 from bottle import request, response
 
 __author__ = 'Jeff Muday'
-__version__ = 0.0.1
+__version__ = '0.0.1'
 __license__ = 'MIT'
 
 def _token_generator(size=12, chars=string.ascii_uppercase + string.digits):
