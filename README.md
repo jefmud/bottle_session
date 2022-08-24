@@ -1,7 +1,9 @@
 # bottle_session
 `bottle_session` is a simple session module for the Bottle framework.  Some other projects have session managers for Bottle, but I felt a very simple session was in the spirit of the Bottle framework.
 
-The session is referenced with a simple cookie that can be stored in two selectable modes: `memory` only or a pickled server-side cache `file`.
+The sever-side session is referenced with a simple cookie that can be stored in two selectable modes: `memory` only or a pickled server-side cache `file`.
+
+Currently session clean-up on the pickled type only happens when a client gracefully performs a logout.  The memory session is cleaned when its data stucture is deallocated.  I will change this to fully follow the expiry on the client-side-cookie.
 
 
 ### Caveat
