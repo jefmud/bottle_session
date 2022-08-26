@@ -13,7 +13,7 @@ import string
 from bottle import request, response
 
 __author__ = 'Jeff Muday'
-__version__ = '0.0.1'
+__version__ = '0.0.3'
 __license__ = 'MIT'
 
 def _token_generator(size=12, chars=string.ascii_uppercase + string.digits):
@@ -85,7 +85,7 @@ class Session:
         new() - creates a new session cookie,
             purge old session (if any), blanks out the data
         """
-        self.purge()
+        #self.purge()
         self._key = _token_generator(32)
         self.data = {}
         response.set_cookie(self._cookie_name, self._key, self._secret)
