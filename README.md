@@ -46,16 +46,18 @@ def some_func():
     ...
 ```
 
-Alternately you could put a session connect in the `before_request` and save the session in the `after_request`.  Though it is somewhat inefficient to do this.
+Alternatively, you could put a session connect in the `before_request` and save the session in the `after_request`.  Though it is somewhat inefficient to do this.
 
 ```
 @app.before_request
 def before_request():
     session.connect()
+app.add_hook('before_request', before_request)
     
 @app.after_request
 def after_request():
     session.save()
+app.add_hook('after_request', after_request)
 ```
 
 Then when the user's session is done, you can purge or clear the session with `session.purge()` or `session.clear()` both are equivalent.
